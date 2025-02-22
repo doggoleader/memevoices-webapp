@@ -1,12 +1,14 @@
 import './App.css';
 import {useEffect} from "react";
 import Header from "./components/header/Header";
-const tg = window.Telegram.WebApp;
+import {useTelegram} from "components/hooks/useTelegram";
 
 function App() {
 
+    const { telegram, onToggleButton } = useTelegram();
+
     useEffect(() => {
-        tg.ready();
+        telegram.ready();
     }, []);
 
   return (
@@ -14,6 +16,7 @@ function App() {
         <Header/>
         <br/>
         <p>This is a website for memevoices Telegram bot</p>
+        <button onClick={onToggleButton}>Toggle Telegram Button</button>
     </div>
   );
 }
