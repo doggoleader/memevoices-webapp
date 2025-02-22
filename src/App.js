@@ -13,7 +13,7 @@ function App() {
     <div className="App">
         <Header/>
         <br/>
-        <p>Hello, Bimokk, Дядя Витя, и т.д.</p>
+        <p>This is a website for memevoices Telegram bot</p>
     </div>
   );
 }
