@@ -2,7 +2,7 @@ close_button {
     font-family: Monospaced, serif;
     padding: 10px 15px;
     background: var(--tg-theme-bg-color);
-    border: aqua;
+    border: #36ff00 1px solid;
     outline: red solid 1px;
     color: var(--tg-theme--text-color);
     cursor: pointer;
