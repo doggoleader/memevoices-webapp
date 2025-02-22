@@ -12,6 +12,8 @@ function App() {
   return (
     <div className="App">
         <Header/>
+        <br/>
+        <p>this is a test message</p>
     </div>
   );
 }
