@@ -1,8 +1,10 @@
-.button {
+close_button {
+    font-family: Monospaced, serif;
     padding: 10px 15px;
     background: var(--tg-theme-bg-color);
-    border: none;
-    outline: none;
-    color: var(--tg-theme-button-text-color);
+    border: aqua;
+    outline: red solid 1px;
+    color: var(--tg-theme--text-color);
     cursor: pointer;
+    alignment-baseline: text-bottom;
 }
