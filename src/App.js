@@ -13,7 +13,7 @@ function App() {
     <div className="App">
         <Header/>
         <br/>
-        <p>this is a test message</p>
+        <p>Hello, Bimokk, Дядя Витя, и т.д.</p>
     </div>
   );
 }
