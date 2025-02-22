@@ -1,0 +1,27 @@
+name: Deploy to Timeweb Cloud
+
+on:
+  push:
+    branches:
+      - master  # Change this to your deployment branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to Timeweb Cloud Server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          SERVER_USER: root  # Replace with your server username
+          SERVER_IP: 194.87.56.242
+          DEPLOY_DIR: /var/www/memevoices-webapp  # Replace with your app folder
+
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "cd $DEPLOY_DIR && git pull origin main && npm install && npm run build && systemctl restart nginx"
