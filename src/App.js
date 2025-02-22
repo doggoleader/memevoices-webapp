@@ -2,6 +2,9 @@ import './App.css';
 import {useEffect} from "react";
 import Header from "./components/header/Header";
 import {useTelegram} from "./components/hooks/useTelegram";
+import { Route, Routes } from "react-router-dom";
+import Form from "./components/form/Form";
+import ProductList from "./components/ProductList/ProductList";
 
 function App() {
 
@@ -14,9 +17,10 @@ function App() {
   return (
     <div className="App">
         <Header/>
-        <br/>
-        <p>This is a website for memevoices Telegram bot</p>
-        <button onClick={onToggleButton}>Toggle Telegram Button</button>
+        <Routes>
+            <Route index element={<ProductList />} />
+            <Route path={"form"} element={<Form />} />
+        </Routes>
     </div>
   );
 }
